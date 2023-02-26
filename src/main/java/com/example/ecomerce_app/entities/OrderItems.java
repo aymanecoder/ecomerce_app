@@ -4,8 +4,8 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.OneToMany;
 
 public class OrderItems {
-    private long order_id;
+    private Long order_id;
     @OneToMany(fetch = FetchType.LAZY)
-    private long product_id;
+    private Long product_id;
     private int auqntity;
 }
