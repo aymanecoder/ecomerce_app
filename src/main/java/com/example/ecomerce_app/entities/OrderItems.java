@@ -1,11 +1,18 @@
 package com.example.ecomerce_app.entities;
 
 import jakarta.persistence.FetchType;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 
 public class OrderItems {
-    private Long order_id;
-    @OneToMany(fetch = FetchType.LAZY)
-    private Long product_id;
-    private int auqntity;
+    private Long orderItemId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "productId" ,referencedColumnName = "productId")
+
+    private Product product_id;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "orderId" ,referencedColumnName = "orderId")
+    private Order order_id;
+    private int quantity;
 }

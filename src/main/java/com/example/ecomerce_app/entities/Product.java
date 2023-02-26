@@ -16,6 +16,8 @@ public class Product {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long productId;
     private String name;
+
+    @ManyToOne(fetch = FetchType.LAZY)
     private Merchant merchant_id;
     private int price;
     private ProductStatus status;

@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.Instant;
 import java.util.Date;
 @Entity @NoArgsConstructor @AllArgsConstructor @Data @Builder
 public class Order {
@@ -16,4 +17,5 @@ public class Order {
     @JoinColumn(name = "user_id", referencedColumnName = "userId")
     private User user_id;
     private String status;
+    private Instant createdAt;
 }
