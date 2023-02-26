@@ -14,9 +14,8 @@ import java.util.Date;
 @Entity @NoArgsConstructor @AllArgsConstructor @Data @Builder
 public class Product {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private long productId;
     private String name;
-    private String n;
     private BigInteger merchant_id;
     private int price;
     private ProductStatus status;
